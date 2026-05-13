@@ -16,7 +16,7 @@ const Login = () => {
     })
     let navigate=useNavigate()
     const onchangeForm = (e) => {
-        setForm({ ...form, [e.target.name]: e.target.value })
+        setForm({ ...form, [e.target.name]: e.target.name === 'userName' || e.target.name === 'email' ? e?.target?.value?.toLowerCase() : e.target.value });
 
     }
 
@@ -57,7 +57,7 @@ const Login = () => {
                                 required
                                 onChange={onchangeForm}
                             /> : <input
-                                type="userName"
+                                type="text"
                                 placeholder="UserName"
                                 className="form-control"
                                 value={form.userName}

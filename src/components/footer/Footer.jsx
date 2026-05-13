@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { context } from "../../store/context";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
    const { user ,sidebar} = useContext(context);
@@ -24,10 +25,10 @@ const Footer = () => {
             <h6 className="mb-3 fw-bold">Quick Links</h6>
 
             <ul className="list-unstyled small">
-              <li><a href="#" className="footer-link">Home</a></li>
-              <li><a href="#" className="footer-link">Features</a></li>
-              <li><a href="#" className="footer-link">How It Works</a></li>
-              <li><a href="#" className="footer-link">Contact</a></li>
+              <li><Link to='/' className="footer-link">Home</Link></li>
+              <li><Link to='/dashboard' className="footer-link">Features</Link></li>
+              <li><Link to='/about'  className="footer-link">How It Works</Link></li>
+              <li><Link to='/contact'  className="footer-link">Contact</Link></li>
             </ul>
           </div>
 
@@ -37,11 +38,11 @@ const Footer = () => {
 
             <div className="d-flex flex-column gap-2 small">
 
-              <a href="#" className="footer-link">
+              <a href="https://github.com/MUHAMMADUMAIRSADIQ-CODE1" className="footer-link">
                 <i className="bi bi-github me-2"></i> GitHub
               </a>
 
-              <a href="#" className="footer-link">
+              <a href="https://www.linkedin.com/in/muhammad-umair-sadiq-047aa73a5/" className="footer-link">
                 <i className="bi bi-linkedin me-2"></i> LinkedIn
               </a>
 

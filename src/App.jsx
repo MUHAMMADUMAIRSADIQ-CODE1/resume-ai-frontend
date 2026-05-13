@@ -18,11 +18,13 @@ import GetUser from './getme.jsx'
 import FilePopup from './components/filePopup.jsx'
 import CreateResume from './components/CreateResume/CreateResume.jsx'
 import ResumeAnalyzePage from './components/createresumepage/ResumeAnalyzePage.jsx'
+import AboutPage from './components/about/About.jsx'
+import ContactPage from './components/contact/Contact.jsx'
 
 function App() {
-  let { theme, state, setLoader, loader, loaderText, setLoaderText, user,file } = useContext(context)
-  
-console.log(user)
+  let { theme, state, setLoader, loader, loaderText, setLoaderText, user, file } = useContext(context)
+
+  console.log(user)
 
   useEffect(() => {
     setLoaderText({ mainText: "Welcome…", subText: "Ready to analyze your resume" })
@@ -37,17 +39,21 @@ console.log(user)
       <div className={theme === "dark" ? "dark" : "light"}>
         {loader ? <AiLoader welcome={loaderText.mainText} second={loaderText.subText} /> : ""}
       </div>
-     
-     
+
+
       <Router>
-         {file?<FilePopup/>:''}
-        <GetUser  />
+        {file ? <FilePopup /> : ''}
+        <GetUser />
+        <div style={{ zIndex: "100000000" }}>{state === "Login" ? <Login /> : state === "Signup" ? <Signup /> : ""}</div>
         <Routes>
           <Route path='/' element={<LandingPage />} />
-          <Route path='/ResumeAnalyzePage' element={<ResumeAnalyzePage/>} />
+          <Route path='/ResumeAnalyzePage' element={<ResumeAnalyzePage />} />
           <Route path='/dashboard' element={<ProtectedRoute user={user}>
             <Dashboard />
           </ProtectedRoute>} />
+          <Route path='/about' element={<AboutPage />} />
+          <Route path='/contact' element={<ContactPage/>
+          } />
         </Routes>
       </Router>
     </>

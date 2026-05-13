@@ -29,11 +29,11 @@ const Sidebar = () => {
                     <ul className="menu">
 
                         {[
-                            { icon: "bi-house", text: "Home" },
-                            { icon: "bi-info-circle", text: "About" },
-                            { icon: "bi-stars", text: "Features" },
-                            { icon: "bi-envelope", text: "Contact" },
-                            { icon: "bi-speedometer2", text: "Dashboard" },
+                            { icon: "bi-house", text: "Home",path:'/'  },
+                            { icon: "bi-info-circle", text: "About",path:'/about'  },
+                            { icon: "bi-stars", text: "Features",path:'/dashboard' },
+                            { icon: "bi-envelope", text: "Contact",path:'/contact' },
+                            { icon: "bi-speedometer2", text: "Dashboard",path:'/dashboard' },
                             { icon: "bi-file-earmark-plus", text: "Analyze Resume", path: '/ResumeAnalyzePage' },
                             { icon: "bi-folder2-open", text: "My Resumes" },
                             { icon: "bi-bar-chart-line", text: "Analyzer" },

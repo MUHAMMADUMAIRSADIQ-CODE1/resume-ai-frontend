@@ -14,11 +14,11 @@ function Profile({ setProfile, profile }) {
     function pickFile(e) {
         let file = e.target.files[0]
         let url = URL.createObjectURL(file)
-        setImage({...image, url, file })
+        setImage({ ...image, url, file })
         console.log("image local", image.url)
     }
     function move(e) {
-        if (image.url ||image.dbProfile) {
+        if (image.url || image.dbProfile) {
             console.log("preview")
             window.open(image?.url || image.dbProfile, "_blank")
         }
@@ -27,7 +27,7 @@ function Profile({ setProfile, profile }) {
         if (image.url) {
             let form = new FormData()
             form.append('image', image.file)
-            form.append('fileId', user.fileId)
+            if (user?.fileId) form.append('fileId', user.fileId)
             await handleProfile(form)
         }
         else {
@@ -55,7 +55,7 @@ function Profile({ setProfile, profile }) {
 
                 <div className="profile-img mb-3" >
                     <img
-                       src={image.url || image.dbProfile || "/default.png"}
+                        src={image.url || image.dbProfile || "/default.png"}
                         className="img-fluid"
                         alt="profile"
                     />

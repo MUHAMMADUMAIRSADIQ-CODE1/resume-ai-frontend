@@ -41,7 +41,7 @@ const Header = () => {
 
             {/* ===== LINKS (Desktop Only) ===== */}
             <ul className="navbar-nav mx-auto gap-3 d-none d-lg-flex">
-              {[{ text: 'Home', path: '/' }, { text: 'About', path: '/' }, { text: 'Features', path: '/dashboard' }, { text: 'Contact', path: '/' }].map((item, i) => (
+              {[{ text: 'Home', path: '/' }, { text: 'About', path: '/about' }, { text: 'Features', path: '/dashboard' }, { text: 'Contact', path: '/contact' }].map((item, i) => (
                 <li key={i} className="nav-item">
                   <Link className="nav-link fw-medium text-dark" to={item.path}>
                     {item.text}

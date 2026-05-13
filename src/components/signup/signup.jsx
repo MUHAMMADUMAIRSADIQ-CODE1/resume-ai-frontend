@@ -15,11 +15,11 @@ const Signup = () => {
     });
 
     const handleChange = (e) => {
-        
-        setForm({ ...form, [e.target.name]: e.target.value });
-    };
 
+        setForm({ ...form, [e.target.name]: e.target.name === 'userName' || e.target.name === 'email' ? e?.target?.value?.toLowerCase() : e.target.value });
+    };
     
+
 
     const sendOtp = async (e) => {
         e.preventDefault();
@@ -34,7 +34,7 @@ const Signup = () => {
 
     const verifyOtp = (e) => {
         e.preventDefault();
-       
+
         alert("Account created successfully");
     };
 

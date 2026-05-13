@@ -33,11 +33,11 @@ const LandingHeader = () => {
                     {/* DESKTOP NAV */}
                     <div className="d-none d-lg-flex ms-auto align-items-center gap-4">
 
-                        <a className="nav-link-custom" href="#" >Home</a>
+                        <Link className="nav-link-custom" to='/' >Home</Link>
                         {user ? <Link to='/dashboard' className="nav-link-custom" href="#features">Dashboard</Link> :
-                            <a className="nav-link-custom" href="#" onClick={()=>setState("Login")}>Dashboard</a>}
-                        <a className="nav-link-custom" href="#about">About</a>
-                        <a className="nav-link-custom" href="#contact">Contact</a>
+                            <a className="nav-link-custom" href="#" onClick={() => setState("Login")}>Dashboard</a>}
+                        <Link className="nav-link-custom" to='/about'>About</Link>
+                        <Link className="nav-link-custom" to='/contact'>Contact</Link>
                         <a className="nav-link-custom" href="#contact" onClick={() => setState("Login")}>Login</a>
                         <a className="nav-link-custom" href="#contact" onClick={() => setState("Signup")}>Signup</a>
 
@@ -79,10 +79,10 @@ const LandingHeader = () => {
 
                 <div className="offcanvas-body d-flex flex-column gap-2">
 
-                    <a className="side-link" href="#" data-bs-dismiss="offcanvas" >Home</a>
+                    <Link className="nav-link-custom" to='/' >Home</Link>
                     <Link to='/dashboard' className="side-link" href="#features">Features</Link>
-                    <a className="side-link" href="#about" data-bs-dismiss="offcanvas">About</a>
-                    <a className="side-link" href="#contact" data-bs-dismiss="offcanvas">Contact</a>
+                    <Link className="nav-link-custom" to='/about'>About</Link>
+                    <Link className="nav-link-custom" to='/contact'>Contact</Link>
                     <a className="side-link" href="#contact" data-bs-dismiss="offcanvas" onClick={() => setState("Signup")} >Signup</a>
                     <a className="side-link" href="#contact" data-bs-dismiss="offcanvas" onClick={() => setState("Login")}>Login</a>
 

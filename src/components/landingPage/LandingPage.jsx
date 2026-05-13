@@ -25,7 +25,7 @@ const LandingPage = () => {
             >
 
                 <LandingHeader />
-                <div style={{ zIndex: "100000000" }}>{state === "Login" ? <Login /> : state === "Signup" ? <Signup /> : ""}</div>
+                
                 {/* HERO */}
                 <div className="min-vh-100 d-flex align-items-center justify-content-center p-3 p-md-4">
                     <div className="container">
